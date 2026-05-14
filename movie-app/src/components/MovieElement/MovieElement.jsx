@@ -1,6 +1,6 @@
 import './MovieElement.css';
 
-const MovieElement = ( {movie} ) => {
+const MovieElement = ( {movie, onRemoveMovie } ) => {
     const stars = [];
 
     for (let i = 0; i < movie.grade; i++) {
@@ -21,6 +21,7 @@ const MovieElement = ( {movie} ) => {
             src="./public/img/delete.png" 
             className="delete-movie-icon" 
             alt="Ta bort film" 
+            onClick={() => onRemoveMovie(movie)}
             />
             
             {stars}

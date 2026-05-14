@@ -10,8 +10,12 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   const addMovie = (movie) => {
-    setMovies([...movies, movie])
-  }
+    setMovies([...movies, movie]);
+  };
+
+  const removeMovie = (deletedMovie) => {
+    setMovies(movies.filter(movie => movie !== deletedMovie));
+  };
 
   return (
     <main>
@@ -21,7 +25,10 @@ function App() {
 
       <hr/>
 
-      <MovieList movies={movies} />
+      <MovieList 
+        movies={movies} 
+        onRemoveMovie={removeMovie}
+      />
       
       <div className="d-flex justify-content-center gap-2 mt-3">
         <OrderByAlphaButton />
