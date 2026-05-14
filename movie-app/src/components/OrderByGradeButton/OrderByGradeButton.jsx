@@ -1,9 +1,13 @@
 import Button from 'react-bootstrap/Button';
 
-const OrderByGradeButton = () => {
+const OrderByGradeButton = ( {onOrderByGrade} ) => {
     return(
-        <Button variant="primary" type="submit">
-            Betygsordning
+        <Button 
+          variant="primary" 
+          type="submit"
+          onClick={onOrderByGrade}
+        >
+          Betygsordning
         </Button>
     );
 }

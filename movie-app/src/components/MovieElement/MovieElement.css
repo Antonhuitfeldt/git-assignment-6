@@ -1,0 +1,19 @@
+
+li {
+    list-style: none;
+    background-color: #eee;
+    margin: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px #999;
+    text-align: left;
+}
+
+li > img {
+    float: right;
+    height: 25px;
+    margin-left: auto;
+}
+
+.delete-movie-icon {
+    cursor: pointer;
+}
