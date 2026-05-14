@@ -2,20 +2,27 @@ import { useState } from 'react'
 import Heading from './components/Heading/Heading';
 import AddMovieForm from './components/AddMovieForm/AddMovieForm';
 import MovieList from './components/MovieList/MovieList';
-import MovieElement from './components/MovieElement/MovieElement';
 import OrderByAlphaButton from './components/OrderByAlphaButton/OrderByAlphaButton';
 import OrderByGradeButton from './components/OrderByGradeButton/OrderByGradeButton';
 import './App.css'
 
 function App() {
+  const [movies, setMovies] = useState([]);
+
+  const addMovie = (movie) => {
+    setMovies([...movies, movie])
+  }
 
   return (
     <main>
       <Heading text="Min Filmlista" />
-      <AddMovieForm/>
+      
+      <AddMovieForm onAddMovie={addMovie} />
+
       <hr/>
-      <MovieList/>
-      <MovieElement/>
+
+      <MovieList movies={movies} />
+      
       <div className="d-flex justify-content-center gap-2 mt-3">
         <OrderByAlphaButton />
         <OrderByGradeButton />

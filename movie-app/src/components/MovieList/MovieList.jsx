@@ -1,8 +1,14 @@
-const MovieList = () => {
+import MovieElement from "../MovieElement/MovieElement";
+
+const MovieList = ({ movies }) => {
     return(
         <div>
+            <h2>Filmer</h2>
+
             <ul className="movie-list">
-                <h2>Filmer</h2>
+                {movies.map((movie, index) => 
+                    <MovieElement key={index} movie={movie}/>
+                )}
             </ul>
         </div>
     );
