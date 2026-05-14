@@ -17,6 +17,16 @@ function App() {
     setMovies(movies.filter(movie => movie !== deletedMovie));
   };
 
+  const sortByAlpha = () => {
+    const sortedAlphaMovies = [...movies].sort((a,b) => a.title.localeCompare(b.title));
+    setMovies(sortedAlphaMovies);
+  };
+
+  const sortByGrade = () => {
+    const sortedGradeMovies = [...movies].sort((a,b) => a.grade - b.grade);
+    setMovies(sortedGradeMovies);
+  };
+
   return (
     <main>
       <Heading text="Min Filmlista" />
@@ -31,8 +41,8 @@ function App() {
       />
       
       <div className="d-flex justify-content-center gap-2 mt-3">
-        <OrderByAlphaButton />
-        <OrderByGradeButton />
+        <OrderByAlphaButton onOrderByAlpha={sortByAlpha} />
+        <OrderByGradeButton onOrderByGrade={sortByGrade} />
       </div>
     </main>
   );

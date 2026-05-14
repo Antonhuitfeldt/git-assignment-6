@@ -1,9 +1,13 @@
 import Button from 'react-bootstrap/Button';
 
-const OrderByAlphaButton = () => {
+const OrderByAlphaButton = ( {onOrderByAlpha} ) => {
     return(
-        <Button variant="primary" type="submit">
-            Alfabetisk ordning
+        <Button 
+          variant="primary" 
+          type="submit"
+          onClick={onOrderByAlpha}
+        >
+          Alfabetisk ordning
         </Button>
     );
 }
