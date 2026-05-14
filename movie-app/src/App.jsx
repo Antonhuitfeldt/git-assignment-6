@@ -29,9 +29,13 @@ function App() {
 
   return (
     <main>
-      <Heading text="Min Filmlista" />
+      <Heading 
+        text="Min Filmlista" 
+      />
       
-      <AddMovieForm onAddMovie={addMovie} />
+      <AddMovieForm 
+        onAddMovie={addMovie} 
+      />
 
       <hr/>
 
@@ -41,8 +45,13 @@ function App() {
       />
       
       <div className="d-flex justify-content-center gap-2 mt-3">
-        <OrderByAlphaButton onOrderByAlpha={sortByAlpha} />
-        <OrderByGradeButton onOrderByGrade={sortByGrade} />
+        <OrderByAlphaButton 
+          onOrderByAlpha={sortByAlpha} 
+        />
+        
+        <OrderByGradeButton 
+          onOrderByGrade={sortByGrade}
+        />
       </div>
     </main>
   );

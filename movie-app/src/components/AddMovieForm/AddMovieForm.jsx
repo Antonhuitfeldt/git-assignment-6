@@ -24,7 +24,7 @@ const AddMovieForm = ({ onAddMovie }) => {
 
     const movie = {
       title: title,
-      grade: Number(grade),
+      grade: Number(grade)
     };
 
     onAddMovie(movie);
